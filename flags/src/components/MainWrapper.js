@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import Home from './Home'
 import About from './About'
+import Flags from './Flags'
+import FlagItem from './FlagItem'
 
 import {
     BrowserRouter as Router,
@@ -11,8 +13,10 @@ import {
     Link
 } from "react-router-dom";
 
+import colors from '../styles/colors'
+
 const MainWrapperStyled = styled.section`
-    margin-top: 60px;
+    padding-top: 80px;
 `
 
 const MainWrapper = () => {
@@ -24,6 +28,10 @@ const MainWrapper = () => {
             <Route path="/about">
                 <About />
             </Route>
+            <Route path="/flags">
+                <Flags />
+            </Route>
+            <Route path="/:id" children={<FlagItem />} />
         </Switch>
     </MainWrapperStyled>
 }

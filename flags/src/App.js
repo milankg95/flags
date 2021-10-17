@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import GlobalStyle from './styles/globalStyle'
+
+import FlagItem from './components/FlagItem';
 
 import {
   BrowserRouter as Router,
@@ -13,9 +16,11 @@ import MainWrapper from './components/MainWrapper'
 
 function App() {
   return <>
+    <GlobalStyle />
     <Router>
       <Header />
       <MainWrapper />
+      <Route path="/:id" children={<FlagItem />} />
     </Router>
   </>
 }
